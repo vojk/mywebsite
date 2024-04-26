@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MainPage</title>
+
+</head>
+<body>
+<div class="header_div">
+    <svg width="72" height="72" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="280" height="280" rx="32" fill="#C6BEAC"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M88.2072 136.414C114.831 136.414 136.414 114.831 136.414 88.2067C136.414 61.5826 114.831 39.9995 88.2072 39.9995C61.5831 39.9995 40 61.5826 40 88.2067C40 114.831 61.5831 136.414 88.2072 136.414ZM90.92 104.999L99.272 71.927H95L88.472 100.295L81.8 71.927H77.384L85.88 104.999H90.92Z" fill="#1C1C1C"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M191.793 240C218.417 240 240 218.417 240 191.793C240 165.169 218.417 143.586 191.793 143.586C165.169 143.586 143.586 165.169 143.586 191.793C143.586 218.417 165.169 240 191.793 240ZM201.776 178.576L202.256 174.928H182.528V178.576H190.064V208H194.432V178.576H201.776Z" fill="#1C1C1C"/>
+        <path d="M40 143.586H136.414V189.004C136.414 217.168 113.583 240 85.4183 240H40V143.586Z" fill="#1C1C1C"/>
+        <path d="M143.586 90.996C143.586 62.8317 166.417 40 194.582 40H240V136.414H143.586V90.996Z" fill="#1C1C1C"/>
+    </svg>
+    <div>
+        <h1 class="header">
+            Vojtech "Zalubo" Tmej
+        </h1>
+        <p class="note">Fullstack developer</p>
+    </div>
+</div>
+
+
+<div class="Container" id="">
+    <h2>About me</h2>
+    <p>Hello, I am student and fullstack developer. I am doing web applications. My goal is to do your experience smooth
+        and satisfying.</p>
+    <div class="effect_card">
+
+    </div>
+</div>
+
+<div class="projects_container">
+    <h2>Projects</h2>
+    <div id="cards_projects">
+        <a class="Card_social Card_project" id="CardProject1" href="https://pomodoro.zalubo.net">
+            <h3>Pomodoro Timer</h3>
+            <div id="effect_card_CardProject1" class="effect_card"></div>
+        </a>
+    </div>
+</div>
+
+<div class="social_section">
+    <h2>Social Sites</h2>
+    <div id="cards_social_sites">
+        <a class="Card_social" id="GithubCard" href="http://github.com/vojk/">
+            <h3>Github</h3>
+            <div id="effect_card_GithubCard" class="effect_card"></div>
+        </a>
+        <a class="Card_social" id="InstagramCard" href="http://instagram.com/zalubo_/">
+            <h3>Instagram</h3>
+            <div id="effect_card_InstagramCard" class="effect_card"></div>
+        </a>
+    </div>
+</div>
+
+</body>
+
+<script>
+    addEventListener('load', function () {
+        const effect = document.getElementsByClassName("effect_card");
+
+        for (let effectItem of effect) {
+            effectItem.style.visibility = 'hidden';
+        }
+    });
+    addEventListener('mousemove', function (e) {
+        const effect = document.getElementsByClassName("effect_card");
+
+        const x = e.clientX;
+        const y = e.clientY;
+
+        for (let effectItem of effect) {
+            effectItem.style.visibility = 'visible';
+            effectItem.style.left = (x - effectItem.parentElement.getBoundingClientRect().left) + 'px';
+            effectItem.style.top = (y - effectItem.parentElement.getBoundingClientRect().top) + 'px';
+        }
+
+    });
+</script>
+</html>
