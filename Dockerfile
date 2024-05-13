@@ -1,4 +1,4 @@
-FROM sitespeedio/node:ubuntu-22-04-nodejs-20.9.0
+FROM node:20-buster
 LABEL authors="zalubo"
 
 
